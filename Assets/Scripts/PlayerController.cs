@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private float speed, jumpSpeed;
+    [SerializeField] public float speed, jumpSpeed;
     [SerializeField] private LayerMask ground;
 
     private PlayerActions playerActions;
@@ -68,5 +69,23 @@ public class PlayerController : MonoBehaviour
         Vector3 currentPosition = transform.position;
         currentPosition.x += movementInput * speed * Time.deltaTime;
         transform.position = currentPosition;
+        Flip();
+        FlipBack();
+    }
+
+    void Flip()
+    {
+        if (Keyboard.current.leftArrowKey.wasPressedThisFrame || Keyboard.current.aKey.wasPressedThisFrame)
+        {
+            transform.eulerAngles = new Vector3(0,180,0);
+        }
+    }
+
+    void FlipBack()
+    {
+        if (Keyboard.current.rightArrowKey.wasPressedThisFrame || Keyboard.current.dKey.wasPressedThisFrame)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
     }
 }

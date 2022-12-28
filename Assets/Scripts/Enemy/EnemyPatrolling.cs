@@ -34,4 +34,12 @@ public class EnemyPatrolling : MonoBehaviour
     public void Die(){
         Destroy(gameObject);
     }
+
+    public void TakeDamage(bool damage)
+    {
+        if (damage)
+        {
+            Die();  
+        }
+    }
 }
