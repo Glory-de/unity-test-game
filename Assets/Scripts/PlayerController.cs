@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Collider2D col;
 
+    public Animator anim;
+
     private void Awake()
     {
         playerActions = new PlayerActions();
@@ -69,6 +71,8 @@ public class PlayerController : MonoBehaviour
         Vector3 currentPosition = transform.position;
         currentPosition.x += movementInput * speed * Time.deltaTime;
         transform.position = currentPosition;
+        bool playerRunningAnimation = movementInput > 0 || movementInput < 0;
+        anim.SetBool("Running", playerRunningAnimation);
         Flip();
         FlipBack();
     }
