@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour, IDataPersistence
 {
+    AudioSource source;
+
     [SerializeField] private string id;
 
     [ContextMenu("Generate guid for id")]
@@ -43,5 +45,8 @@ public class Coin : MonoBehaviour, IDataPersistence
         collected = true;
         visual.gameObject.SetActive(false);
         GameEventsManager.instance.CoinCollected();
+        source.Play();
     }
+
+
 }

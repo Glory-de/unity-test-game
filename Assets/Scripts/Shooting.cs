@@ -15,6 +15,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (waitBuffer > 0)
         {
             waitBuffer -= Time.deltaTime;   

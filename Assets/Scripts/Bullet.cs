@@ -23,6 +23,8 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        //Check if there is collision with enemy and if so destroy.
         EnemyPatrolling enemy = collision.GetComponent<EnemyPatrolling>();
         if(enemy != null)
         {

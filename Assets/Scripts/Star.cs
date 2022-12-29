@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Star : MonoBehaviour
 {
+
     static public bool isStarCollected = false;
+
     [SerializeField] private GameObject floatingTextPrefab;
-    void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             Destroy(gameObject);
-            isStarCollected = true;
+            isStarCollected = true; 
             Instantiate(floatingTextPrefab);
         }
-
     }
 }
