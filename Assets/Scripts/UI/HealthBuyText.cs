@@ -5,11 +5,17 @@ using TMPro;
 
 public class HealthBuyText : MonoBehaviour, IDataPersistence
 {
-    [SerializeField] private int healthTotal = 0;
+    [SerializeField] public int healthTotal = 0;
     private TMP_Text healthCollectedText;
+    public static HealthBuyText instance { get; private set; }
 
     private void Awake() 
     {
+        if(instance != null)
+        {
+            Debug.LogError("Found more than one  Health Manager in the game.");
+        }
+        instance = this;
         healthCollectedText = this.GetComponent<TMP_Text>();
     }
 
@@ -35,8 +41,12 @@ public class HealthBuyText : MonoBehaviour, IDataPersistence
         GameEventsManager.instance.onHealthCollected -= OnHealthCollected;
     }
 
-    private void OnHealthCollected() 
+    public void OnHealthCollected() 
     {
         healthTotal++;
+    }
+
+    public void OnHealthUsed(){
+        healthTotal--;
     }
 }

@@ -7,7 +7,7 @@ public class YellowColliderLevelLoader : MonoBehaviour
     public LevelLoader LL;
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.CompareTag("Player"))
         {
             //Ensures only contact with player object will cause next scene to laod
             LL.LoadNextLevel();

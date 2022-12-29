@@ -26,9 +26,11 @@ public class LevelLoader : MonoBehaviour
         // Load next scene in line after a delay (you can get no delay by deleting the Coroutine, 
         // or specific scene by just specifying the index of scene found in build settings)
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        DataPersistenceManager.instance.SaveGame();
     }
     public void LoadWinLevel()
     {
+        DataPersistenceManager.instance.SaveGame();
         SceneManager.LoadScene("Scene Win");
     }
     IEnumerator LoadLevel(int levelIndex)

@@ -25,7 +25,7 @@ public class Shooting : MonoBehaviour
         }
 
 
-        if (doneWaiting == true && Keyboard.current.kKey.wasPressedThisFrame)
+        if (Star.isStarCollected && doneWaiting == true && Keyboard.current.kKey.wasPressedThisFrame)
         {
             Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
             waitBuffer = 0.1f;
