@@ -17,6 +17,7 @@ public class Coin : MonoBehaviour, IDataPersistence
     private bool collected = false;
 
     private void Awake() {
+        source = GetComponent<AudioSource>();
         visual = this.GetComponentInChildren<SpriteRenderer>();
     }
 

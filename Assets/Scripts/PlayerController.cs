@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDataPersistence
 {
 
+    [SerializeField] public int maxJumps = 1;
+    private int _jumpsLeft;
     [SerializeField] public float speed, jumpSpeed;
     [SerializeField] private LayerMask ground;
 
@@ -39,13 +42,26 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerActions.Land.Jump.performed += _ => Jump();
+        _jumpsLeft = maxJumps;
+    }
+
+    public void LoadData(Gamedata data){
+        maxJumps = data.Jumps;
+    }
+
+    public void SaveData(ref Gamedata data){
+        data.Jumps = maxJumps;
+        data.SceneName = SceneManager.GetActiveScene().name;
     }
 
     private void Jump()
     {
-        if (IsGrounded())
-        {
+        if(IsGrounded() && rb.velocity.y <= 0){
+            _jumpsLeft = maxJumps;
+        }
+        if(_jumpsLeft > 0){
             rb.AddForce(new Vector2(0, jumpSpeed), ForceMode2D.Impulse);
+            _jumpsLeft -= 1;
         }
     }
 

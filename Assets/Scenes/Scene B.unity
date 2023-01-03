@@ -27490,6 +27490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1098728356479832097, guid: 60eb892d6f1a1af40837094aea80961b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60eb892d6f1a1af40837094aea80961b, type: 3}
 --- !u!4 &1547930083 stripped
@@ -66876,6 +66880,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1098728356479832097, guid: 60eb892d6f1a1af40837094aea80961b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60eb892d6f1a1af40837094aea80961b, type: 3}
 --- !u!114 &2085356926 stripped
@@ -66967,6 +66975,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 456616641674965132, guid: 71bd6a48fa2f76e41a10bcdebb9dd9f3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 456616641943459126, guid: 71bd6a48fa2f76e41a10bcdebb9dd9f3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -67131,11 +67143,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5213042446957361649, guid: 70b4a0bb67ba855479bf42d4f2b3554f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.3
+      value: 20.06
       objectReference: {fileID: 0}
     - target: {fileID: 5213042446957361649, guid: 70b4a0bb67ba855479bf42d4f2b3554f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.54
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 5213042446957361649, guid: 70b4a0bb67ba855479bf42d4f2b3554f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -67256,7 +67268,7 @@ PrefabInstance:
       objectReference: {fileID: 1547930083}
     - target: {fileID: 5442806337454306073, guid: 452e79cebaa478547ac74c1e49eafcb8, type: 3}
       propertyPath: orthographic size
-      value: 1.94
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 5442806337454306278, guid: 452e79cebaa478547ac74c1e49eafcb8, type: 3}
       propertyPath: m_LocalPosition.x

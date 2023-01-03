@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyPatrolling : MonoBehaviour
 {
+    public AudioSource sourceDie;
     [SerializeField] float moveSpeed = 1f;
 
     [Header("References")]
@@ -48,6 +49,7 @@ public class EnemyPatrolling : MonoBehaviour
 
     public void Die()
     {
+        sourceDie.Play();
         Destroy(gameObject);
     }
 

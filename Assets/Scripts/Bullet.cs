@@ -28,6 +28,8 @@ public class Bullet : MonoBehaviour
         EnemyPatrolling enemy = collision.GetComponent<EnemyPatrolling>();
         if(enemy != null)
         {
+            Destroy(gameObject);
+            enemy.sourceDie.Play();
             enemy.TakeDamage(true);
         }
     }
